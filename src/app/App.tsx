@@ -1,8 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-
-import { RootState } from './rootReducer'
-
+import { useDispatch } from 'react-redux'
 import { RepoSearchForm } from 'features/repoSearch/RepoSearchForm'
 import { IssuesListPage } from 'features/issuesList/IssuesListPage'
 import { IssueDetailsPage } from 'features/issueDetails/IssueDetailsPage'
@@ -14,6 +11,7 @@ import {
 } from 'features/issuesDisplay/issuesDisplaySlice'
 
 import './App.css'
+import { useSelector } from './store'
 
 type CurrentDisplay =
   | {
@@ -28,7 +26,7 @@ const App: React.FC = () => {
   const dispatch = useDispatch()
 
   const { org, repo, displayType, page, issueId } = useSelector(
-    (state: RootState) => state.issuesDisplay
+    state => state.issuesDisplay
   )
 
   const setOrgAndRepo = (org: string, repo: string) => {
