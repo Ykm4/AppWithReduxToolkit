@@ -3,13 +3,11 @@ import { useDispatch } from 'react-redux'
 import { RepoSearchForm } from 'features/repoSearch/RepoSearchForm'
 import { IssuesListPage } from 'features/issuesList/IssuesListPage'
 import { IssueDetailsPage } from 'features/issueDetails/IssueDetailsPage'
-
 import {
   displayRepo,
   setCurrentDisplayType,
   setCurrentPage
 } from 'features/issuesDisplay/issuesDisplaySlice'
-
 import './App.css'
 import { useSelector } from './store'
 

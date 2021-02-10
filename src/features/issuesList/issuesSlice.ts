@@ -90,8 +90,11 @@ export const fetchIssue = (
   org: string,
   repo: string,
   number: number
-): AppThunk => async dispatch => {
+): AppThunk => async (dispatch, getState, extraArgument) => {
+  // AppThunkの型付けを修正すればextraArgumentとしてrejectWithValuesなどが取れる
+  console.log('extraArgument', extraArgument)
   try {
+    // plain action creatorsを返している
     dispatch(getIssueStart())
     const issue = await getIssue(org, repo, number)
     dispatch(getIssueSuccess(issue))
