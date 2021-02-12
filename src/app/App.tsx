@@ -45,6 +45,7 @@ const App: React.FC = () => {
 
   let content
 
+  // アプリ開発ではif文での書き方ではなくReact Routerなどを用いて実装する？
   if (displayType === 'issues') {
     content = (
       <React.Fragment>
