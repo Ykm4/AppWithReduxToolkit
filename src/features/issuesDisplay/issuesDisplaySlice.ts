@@ -21,8 +21,8 @@ type CurrentDisplayState = {
   CurrentRepo
 
 let initialState: CurrentDisplayState = {
-  org: 'rails',
-  repo: 'rails',
+  org: 'Facebook',
+  repo: 'react',
   page: 1,
   displayType: 'issues',
   issueId: null

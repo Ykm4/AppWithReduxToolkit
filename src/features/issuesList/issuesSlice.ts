@@ -22,7 +22,9 @@ const issuesInitialState: IssuesState = {
   error: null
 }
 
-function startLoading(state: IssuesState) {
+// getIssueStart, getIssuesStartで同じ処理を行っているため関数として切り分けて再利用可能にしている
+// また、関数として切り分けが出来ていた方がテストコードが書きやすい
+const startLoading = (state: IssuesState) => {
   state.isLoading = true
 }
 
@@ -35,7 +37,9 @@ const issues = createSlice({
   name: 'issues',
   initialState: issuesInitialState,
   reducers: {
+    // Issue
     getIssueStart: startLoading,
+    // Issues
     getIssuesStart: startLoading,
     getIssueSuccess(state, { payload }: PayloadAction<Issue>) {
       const { number } = payload
